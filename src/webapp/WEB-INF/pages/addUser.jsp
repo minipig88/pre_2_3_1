@@ -5,11 +5,11 @@
   Time: 9:47
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>User Management Application</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
     </h2>
 </div>
 <div align="center">
-    <form action="/new" method="POST">
+    <form action="/new" method="POST" accept-charset="UTF-8">
         <table border="1" cellpadding="5">
             <caption>
                 <h2>

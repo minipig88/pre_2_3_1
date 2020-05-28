@@ -6,6 +6,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_users")
@@ -63,14 +64,5 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
     }
 }
