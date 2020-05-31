@@ -31,16 +31,28 @@
             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
-            <th>Actions</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <c:forEach var="user" items="${userList}">
             <tr>
                 <td><c:out value="${user.id}"/></td>
                 <td><c:out value="${user.name}"/></td>
                 <td><c:out value="${user.age}"/></td>
-                <td><a href="/edit?id=<c:out value='${user.id}&age=${user.age}&name=${user.name}' />">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/delete?id=<c:out value='${user.id}&age=${user.age}&name=${user.name}' />">Delete</a>
+                <td>
+                    <form action="${pageContext.request.contextPath}/editForm" method="post">
+                        <input type="hidden" name="id" value="${user.id}"/>
+                        <input type="hidden" name="name" value="${user.name}"/>
+                        <input type="hidden" name="age" value="${user.age}"/>
+                        <button type="submit">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="${pageContext.request.contextPath}/delete" method="post">
+                        <input type="hidden" name="userId" value="${user.id}"/>
+                        <input type="hidden" name="action" value="delete"/>
+                        <button type="submit">Delete</button>
+                    </form>
                 </td>
             </tr>
         </c:forEach>

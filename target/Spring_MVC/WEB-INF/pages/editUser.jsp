@@ -22,14 +22,21 @@
     </h2>
 </div>
 <div align="center">
-    <form action="/edit" method="POST">
+    <form action="/editUser" method="POST">
         <table border="1" cellpadding="5">
             <caption>
                 <h2>
                     Edit User
                 </h2>
             </caption>
-            <input type="hidden" name="id" value="<c:out value='${user.id}' />"/>
+            <tr>
+                <th>User ID:</th>
+                <td>
+                    <input type="text" name="id" readonly size="45"
+                           value="<c:out value='${user.id}' />"
+                    />
+                </td>
+            </tr>
             <tr>
                 <th>User Name:</th>
                 <td>
