@@ -13,7 +13,6 @@ public class UserServiceImpl implements UserService {
 
     private final UserDAO userDAO;
 
-    @Autowired
     public UserServiceImpl(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
@@ -32,8 +31,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void deleteUser(User user) {
-        userDAO.deleteUser(user);
+    public void deleteUser(long id) {
+        userDAO.deleteUser(id);
     }
 
     @Override

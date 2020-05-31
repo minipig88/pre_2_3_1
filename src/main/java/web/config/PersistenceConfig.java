@@ -1,6 +1,5 @@
 package web.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -23,7 +22,6 @@ public class PersistenceConfig {
 
     private final Environment env;
 
-    @Autowired
     public PersistenceConfig(Environment env) {
         this.env = env;
     }
