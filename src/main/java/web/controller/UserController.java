@@ -9,11 +9,11 @@ import web.service.UserService;
 
 @Controller
 @RequestMapping("/")
-public class UserAController {
+public class UserController {
 
     private final UserService userService;
 
-    public UserAController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
