@@ -12,7 +12,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserDAO userDAO;
 
-    public UserServiceImpl(UserDAO userDAO) {
+    private UserServiceImpl(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 

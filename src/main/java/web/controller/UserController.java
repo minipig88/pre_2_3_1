@@ -3,7 +3,10 @@ package web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import web.models.User;
 import web.service.UserService;
 
@@ -13,7 +16,7 @@ public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    private UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -29,7 +32,7 @@ public class UserController {
     }
 
     @PostMapping(value = "new")
-    public String AddUser(User user) {
+    public String addUser(User user) {
         userService.addUser(user);
         return "redirect:/";
     }
